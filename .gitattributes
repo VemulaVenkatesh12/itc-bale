@@ -1,0 +1,11 @@
+training/output/*.pth filter=lfs diff=lfs merge=lfs -text
+training/output_crane/*.pth filter=lfs diff=lfs merge=lfs -text
+training/output_crane_hook3d/*.pth filter=lfs diff=lfs merge=lfs -text
+training/output_crane_hook3d_v2/*.pth filter=lfs diff=lfs merge=lfs -text
+
+# any model weights / checkpoints anywhere under training/ go through Git LFS
+# (GitHub rejects non-LFS files over 100 MB)
+training/**/*.pth filter=lfs diff=lfs merge=lfs -text
+training/**/*.ckpt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.ckpt filter=lfs diff=lfs merge=lfs -text

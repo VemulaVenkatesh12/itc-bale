@@ -1,0 +1,63 @@
+reference_project/
+backend/storage/uploads/*
+!backend/storage/uploads/.gitkeep
+backend/__pycache__/
+backend/app/__pycache__/
+backend/.env
+**/__pycache__/
+*.pyc
+
+frontend/node_modules/
+frontend/dist/
+frontend/dev.log
+backend/server*.log
+backend/backend_restart*.log
+frontend/scratch_hook_test/
+
+blender/scene.blend
+blender/scene.blend1
+blender/factory.blend
+blender/factory.blend1
+blender/_last_sim.json
+blender/renders/
+blender/crops/
+blender/blender_gui.log
+
+# vendored third-party MCP server source (github.com/ahujasid/blender-mcp) -
+# fetched by us, not ours to commit; see blender/README.md for how to get it
+blender/_blender_mcp_src/
+blender/_py_deps/
+
+# training outputs: resumable checkpoints (.ckpt, includes optimizer state)
+# and logs are reproducible from the scripts and too large for git; the
+# final deployable weights (checkpoint_best_*.pth) are tracked via Git LFS -
+# see training/README.md to regenerate everything else
+training/output/*
+!training/output/checkpoint_best_ema.pth
+!training/output/checkpoint_best_regular.pth
+!training/output/checkpoint_best_total.pth
+
+training/output_crane/*
+!training/output_crane/checkpoint_best_ema.pth
+!training/output_crane/checkpoint_best_regular.pth
+!training/output_crane/checkpoint_best_total.pth
+
+training/output_crane_hook3d/*
+!training/output_crane_hook3d/checkpoint_best_ema.pth
+!training/output_crane_hook3d/checkpoint_best_regular.pth
+!training/output_crane_hook3d/checkpoint_best_total.pth
+
+training/output_crane_hook3d_v2/*
+!training/output_crane_hook3d_v2/checkpoint_best_ema.pth
+!training/output_crane_hook3d_v2/checkpoint_best_regular.pth
+!training/output_crane_hook3d_v2/checkpoint_best_total.pth
+
+training/*.log
+
+# datasets
+dataset_combined/
+dataset_real_itc/
+dataset_real_itc_merged/
+synthetic_threejs/
+synthetic_topdown/
+*.mp4

@@ -1,0 +1,165 @@
+:root {
+  color-scheme: dark;
+  --bg: #14171c;
+  --panel: #1b1f26;
+  --panel-2: #22262f;
+  --border: #333a46;
+  --text: #e6e9ef;
+  --text-dim: #9aa3b2;
+  --accent: #4da3ff;
+  --green: #2ecc71;
+  --amber: #f5a623;
+  --red: #e74c3c;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; background: var(--bg); color: var(--text); }
+
+.app { max-width: 1500px; margin: 0 auto; padding: 20px 24px 60px; }
+
+header h1 { margin: 0 0 4px; font-size: 1.5rem; }
+.subtitle { margin: 0 0 12px; color: var(--text-dim); font-size: 0.9rem; max-width: 900px; }
+.mode-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+
+.layout { display: grid; grid-template-columns: 1fr 360px; gap: 20px; align-items: start; }
+@media (max-width: 1100px) { .layout { grid-template-columns: 1fr; } }
+
+.main-col { min-width: 0; }
+.side-col { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 16px; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+
+.file-input {
+  background: var(--panel-2); border: 1px solid var(--border); border-radius: 6px;
+  padding: 8px 12px; cursor: pointer; font-size: 0.85rem;
+}
+.file-input input { display: none; }
+
+.mode-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+button {
+  background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+  border-radius: 6px; padding: 8px 12px; cursor: pointer; font-size: 0.85rem;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button.active { background: var(--accent); border-color: var(--accent); color: #06121f; font-weight: 600; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+button.simulate-btn { background: var(--green); border-color: var(--green); color: #06210f; font-weight: 700; }
+
+.error-banner, .warning-banner {
+  padding: 8px 12px; border-radius: 6px; margin-bottom: 10px; font-size: 0.85rem;
+}
+.error-banner { background: #3a1418; border: 1px solid var(--red); color: #ffb3ac; }
+.warning-banner { background: #3a2c0f; border: 1px solid var(--amber); color: #ffd68a; }
+
+.empty-state {
+  border: 1px dashed var(--border); border-radius: 8px; padding: 60px 20px;
+  text-align: center; color: var(--text-dim);
+}
+
+.canvas-wrap {
+  position: relative; width: 100%; background: #000; border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--border);
+}
+.canvas-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.canvas-wrap .overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.overlay.mode-detection, .overlay.mode-drop { cursor: crosshair; }
+.overlay.mode-home { cursor: pointer; }
+
+.area-detection rect { fill: rgba(77,163,255,0.12); stroke: var(--accent); stroke-width: 2; stroke-dasharray: 8 5; }
+.area-detection text { fill: var(--accent); font-size: 16px; font-weight: 700; }
+.area-drop rect { fill: rgba(46,204,113,0.12); stroke: var(--green); stroke-width: 2; stroke-dasharray: 8 5; }
+.area-drop text { fill: var(--green); font-size: 16px; font-weight: 700; }
+.draft rect { stroke-dasharray: 4 4; opacity: 0.8; }
+
+.bale-box rect { fill: none; stroke: var(--amber); stroke-width: 2; }
+.bale-box text { fill: var(--amber); font-size: 13px; font-weight: 700; paint-order: stroke; stroke: #000; stroke-width: 3px; }
+.bale-box.active rect { stroke: var(--accent); stroke-width: 3; animation: pulse-stroke 1s ease-in-out infinite; }
+.bale-box.active text { fill: var(--accent); }
+.bale-box.done rect { stroke: var(--green); stroke-width: 2; opacity: 0.45; }
+.bale-box.done text { fill: var(--green); opacity: 0.8; }
+@keyframes pulse-stroke { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.45; } }
+
+.home-marker circle { fill: none; stroke: #fff; stroke-width: 2; }
+.home-marker text { fill: #fff; font-size: 13px; font-weight: 700; paint-order: stroke; stroke: #000; stroke-width: 3px; }
+
+/* Crane rig: bridge beam (N/S) + trolley (E/W) + hoist cable/hook (up/down) */
+.crane-rig .bridge-beam { stroke: #5b8fd6; stroke-width: 6; stroke-linecap: round; opacity: 0.9; }
+.crane-rig .bridge-leg { stroke: #5b8fd6; stroke-width: 4; opacity: 0.5; }
+.crane-rig .trolley { fill: #2e4a75; stroke: #a9c4ec; stroke-width: 1.5; rx: 2; }
+.crane-rig .hoist-cable { stroke: #ccc; stroke-width: 2; }
+.crane-rig .hook-body { fill: rgba(231,76,60,0.35); stroke: var(--red); stroke-width: 2.5; }
+.crane-rig .hook.spiked .hook-body { fill: rgba(46,204,113,0.4); stroke: var(--green); }
+.crane-rig .carried-bale {
+  fill: #c9a876; stroke: #8a6d45; stroke-width: 1.5; rx: 3;
+  animation: carried-bob 0.6s ease-in-out infinite alternate;
+}
+@keyframes carried-bob { from { transform: translateY(0); } to { transform: translateY(2px); } }
+
+/* Controller panel */
+.controller-panel {
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px;
+}
+.controller-title { font-size: 0.75rem; letter-spacing: 0.06em; color: var(--text-dim); margin-bottom: 10px; text-transform: uppercase; }
+.relay-group { margin-bottom: 10px; }
+.relay-group-label { font-size: 0.7rem; color: var(--text-dim); margin-bottom: 4px; }
+.relay-leds { display: flex; flex-direction: column; gap: 4px; }
+.led { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; padding: 3px 6px; border-radius: 4px; background: var(--panel-2); }
+.led-dot { width: 10px; height: 10px; border-radius: 50%; background: #3a3f4a; box-shadow: inset 0 0 2px #000; flex-shrink: 0; }
+.led.on { background: rgba(46,204,113,0.12); }
+.led.on .led-dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+
+/* Config panel */
+.config-panel { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.config-panel h3 { margin: 14px 0 8px; font-size: 0.85rem; }
+.config-panel h3:first-child { margin-top: 0; }
+.config-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.config-panel label { display: flex; flex-direction: column; gap: 3px; font-size: 0.75rem; color: var(--text-dim); }
+.config-panel label.checkbox { flex-direction: row; align-items: center; gap: 8px; }
+.config-panel input[type="number"] {
+  background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+  border-radius: 4px; padding: 5px 8px; font-size: 0.85rem;
+}
+.hint { font-size: 0.72rem; color: var(--text-dim); margin: 0 0 8px; }
+
+/* Timeline */
+.timeline-panel { margin-top: 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; }
+.timeline-controls { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.timeline-controls label { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-dim); }
+.timeline-controls select { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); border-radius: 4px; padding: 4px 6px; }
+.timeline-clock { font-family: monospace; font-size: 0.85rem; color: var(--text-dim); margin-left: auto; }
+
+.timeline-track { position: relative; user-select: none; cursor: pointer; }
+.timeline-row { display: flex; align-items: center; height: 22px; }
+.timeline-row-label { width: 100px; flex-shrink: 0; font-size: 0.7rem; color: var(--text-dim); }
+.timeline-row-bars { position: relative; flex: 1; height: 14px; background: var(--panel-2); border-radius: 3px; }
+.timeline-bar { position: absolute; top: 0; bottom: 0; background: var(--accent); border-radius: 2px; min-width: 2px; }
+.timeline-playhead { position: absolute; top: 0; bottom: 0; left: 100px; width: 2px; background: var(--red); pointer-events: none; }
+
+/* Results table */
+.results-table { margin-top: 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+.results-table h3 { margin: 0 0 10px; font-size: 0.9rem; }
+.results-table table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.results-table th, .results-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+.results-table th { color: var(--text-dim); font-weight: 600; }
+.results-table tr.active-row { background: rgba(77,163,255,0.12); }
+
+/* ── In-app physical crane-remote button panel (CraneRemotePanel.tsx) ── */
+.crane-remote-panel { margin-top: 12px; }
+.crane-remote-conn { font-size: 0.75rem; margin-bottom: 10px; }
+.crane-remote-conn.ok { color: var(--green); }
+.crane-remote-conn.err { color: #e0704f; }
+.crane-remote-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.crane-remote-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 12px 6px; border: none; border-radius: 8px; cursor: pointer;
+  font-weight: 700; font-size: 0.85rem; color: #fff; background: #333;
+  transition: background 0.1s;
+}
+.crane-remote-btn span { font-size: 0.7rem; font-weight: 500; opacity: 0.85; }
+.crane-remote-btn.on { background: #2a8f3f; box-shadow: 0 0 10px rgba(42,143,63,0.6); }
+.crane-remote-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.crane-remote-btn.stop { width: 100%; margin-top: 10px; background: #a33; }
+.crane-remote-note { font-size: 0.68rem; color: var(--text-dim); margin: 10px 0 0; line-height: 1.4; }

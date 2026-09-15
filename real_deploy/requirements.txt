@@ -1,0 +1,11 @@
+# Same stack as reference_project/edge_deploy/requirements.txt (this is the
+# real-hardware side of that same detector) plus OpenCV's calibration/
+# geometry functions, which the simulation side of the repo never needed.
+#
+# Install CPU-only PyTorch on edge:
+#   pip install torch>=2.2.0 torchvision>=0.17.0 --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2.0
+torchvision>=0.17.0
+rfdetr>=1.8.0
+opencv-python>=4.8.0
+numpy>=1.24.0

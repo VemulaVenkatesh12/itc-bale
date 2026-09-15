@@ -1,0 +1,12 @@
+# These are already installed in this environment (confirmed: torch 2.12.1,
+# rfdetr 1.8.3, supervision 0.29.1, fastapi 0.136.3, uvicorn 0.48.0).
+# Listed here for reproducing the environment elsewhere.
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+torch>=2.2.0
+torchvision>=0.17.0
+rfdetr>=1.8.0
+supervision>=0.29.0

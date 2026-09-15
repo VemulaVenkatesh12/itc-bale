@@ -1,0 +1,484 @@
+{
+ "images": [
+  {
+   "id": 1,
+   "file_name": "cam101_20260911T104957.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 2,
+   "file_name": "cam101_20260911T104326.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 3,
+   "file_name": "cam101_20260911T103826.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 4,
+   "file_name": "cam101_20260911T103856.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 5,
+   "file_name": "cam101_20260911T104627.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 6,
+   "file_name": "cam101_20260911T104256.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 7,
+   "file_name": "cam101_20260911T104426.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 8,
+   "file_name": "cam101_20260911T103956.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 9,
+   "file_name": "cam101_20260911T103926.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 10,
+   "file_name": "cam101_20260911T110032.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 11,
+   "file_name": "cam101_20260911T104026.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 12,
+   "file_name": "cam101_20260911T104356.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 13,
+   "file_name": "cam101_20260911T104657.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 14,
+   "file_name": "cam101_20260911T104456.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 15,
+   "file_name": "cam101_20260911T103656.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 16,
+   "file_name": "cam101_20260911T110002.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 17,
+   "file_name": "cam101_20260911T095548.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 18,
+   "file_name": "cam101_20260911T105128.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 19,
+   "file_name": "cam101_20260911T110132.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 20,
+   "file_name": "cam101_2_2026-09-11T10-45-57.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 21,
+   "file_name": "cam101_2_2026-09-11T13-00-29.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 22,
+   "file_name": "cam101_2_2026-09-11T10-41-26.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 23,
+   "file_name": "cam101_2_2026-09-11T10-36-26.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 24,
+   "file_name": "cam101_2_2026-09-11T11-52-46.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 25,
+   "file_name": "cam101_2_2026-09-11T11-58-17.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 26,
+   "file_name": "cam101_2_2026-09-11T11-32-37.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 27,
+   "file_name": "cam101_2_2026-09-11T12-08-59.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 28,
+   "file_name": "cam101_2_2026-09-11T12-00-54.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 29,
+   "file_name": "cam101_2_2026-09-11T12-02-55.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 30,
+   "file_name": "cam101_2_2026-09-11T11-34-07.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": 31,
+   "file_name": "cam101_2_2026-09-11T12-14-29.jpg",
+   "width": 1280,
+   "height": 720
+  }
+ ],
+ "annotations": [
+  {
+   "id": 1,
+   "image_id": 2,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    804.6,
+    120.4,
+    84.6,
+    51.3
+   ],
+   "area": 4342.1,
+   "iscrowd": 0,
+   "score": 0.4316
+  },
+  {
+   "id": 2,
+   "image_id": 3,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    820.8,
+    64.0,
+    91.2,
+    55.3
+   ],
+   "area": 5048.3,
+   "iscrowd": 0,
+   "score": 0.3856
+  },
+  {
+   "id": 3,
+   "image_id": 4,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    807.3,
+    68.8,
+    83.3,
+    49.4
+   ],
+   "area": 4114.6,
+   "iscrowd": 0,
+   "score": 0.3639
+  },
+  {
+   "id": 4,
+   "image_id": 5,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    904.1,
+    114.7,
+    89.5,
+    46.9
+   ],
+   "area": 4195.7,
+   "iscrowd": 0,
+   "score": 0.3243
+  },
+  {
+   "id": 5,
+   "image_id": 6,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    717.1,
+    74.4,
+    71.1,
+    52.5
+   ],
+   "area": 3729.3,
+   "iscrowd": 0,
+   "score": 0.3172
+  },
+  {
+   "id": 6,
+   "image_id": 7,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    686.4,
+    73.0,
+    74.2,
+    50.5
+   ],
+   "area": 3748.5,
+   "iscrowd": 0,
+   "score": 0.3136
+  },
+  {
+   "id": 7,
+   "image_id": 8,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    988.1,
+    96.3,
+    66.5,
+    46.0
+   ],
+   "area": 3059.1,
+   "iscrowd": 0,
+   "score": 0.284
+  },
+  {
+   "id": 8,
+   "image_id": 9,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    741.3,
+    109.6,
+    65.8,
+    48.3
+   ],
+   "area": 3180.0,
+   "iscrowd": 0,
+   "score": 0.2789
+  },
+  {
+   "id": 9,
+   "image_id": 11,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    989.3,
+    124.7,
+    76.2,
+    66.4
+   ],
+   "area": 5062.8,
+   "iscrowd": 0,
+   "score": 0.2557
+  },
+  {
+   "id": 10,
+   "image_id": 12,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    810.8,
+    48.4,
+    79.1,
+    56.3
+   ],
+   "area": 4452.3,
+   "iscrowd": 0,
+   "score": 0.2506
+  },
+  {
+   "id": 11,
+   "image_id": 13,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    772.7,
+    139.1,
+    81.3,
+    55.7
+   ],
+   "area": 4527.6,
+   "iscrowd": 0,
+   "score": 0.249
+  },
+  {
+   "id": 12,
+   "image_id": 14,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    975.2,
+    119.4,
+    64.6,
+    53.4
+   ],
+   "area": 3450.0,
+   "iscrowd": 0,
+   "score": 0.2488
+  },
+  {
+   "id": 13,
+   "image_id": 15,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    741.9,
+    89.5,
+    51.2,
+    45.2
+   ],
+   "area": 2313.2,
+   "iscrowd": 0,
+   "score": 0.2386
+  },
+  {
+   "id": 14,
+   "image_id": 17,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    727.7,
+    69.3,
+    58.6,
+    48.9
+   ],
+   "area": 2862.7,
+   "iscrowd": 0,
+   "score": 0.2255
+  },
+  {
+   "id": 15,
+   "image_id": 18,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    610.3,
+    136.7,
+    24.2,
+    29.9
+   ],
+   "area": 723.9,
+   "iscrowd": 0,
+   "score": 0.2209
+  },
+  {
+   "id": 16,
+   "image_id": 20,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    913.0,
+    108.8,
+    80.8,
+    44.9
+   ],
+   "area": 3623.5,
+   "iscrowd": 0,
+   "score": 0.192
+  },
+  {
+   "id": 17,
+   "image_id": 21,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    370.8,
+    410.1,
+    113.1,
+    101.0
+   ],
+   "area": 11424.4,
+   "iscrowd": 0,
+   "score": 0.186
+  },
+  {
+   "id": 18,
+   "image_id": 22,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    1116.4,
+    195.1,
+    67.9,
+    56.8
+   ],
+   "area": 3859.0,
+   "iscrowd": 0,
+   "score": 0.168
+  },
+  {
+   "id": 19,
+   "image_id": 23,
+   "category_id": 1,
+   "category_name": "crane_hook",
+   "bbox": [
+    858.4,
+    59.4,
+    77.1,
+    41.2
+   ],
+   "area": 3173.7,
+   "iscrowd": 0,
+   "score": 0.151
+  }
+ ],
+ "categories": [
+  {
+   "id": 1,
+   "name": "crane_hook",
+   "supercategory": "crane_hook"
+  }
+ ]
+}

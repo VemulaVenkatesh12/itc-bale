@@ -1,0 +1,33 @@
+{
+  "_comment": "Manually-estimated crane_hook/crane_spike bboxes for a handful of reference_project/dataset_sam3 frames where the gripper is clearly visible (visually surveyed, not pixel-tool-precise - supplementary real-world signal alongside the precise synthetic annotations, so real-photo appearance isn't learned only from synthetic renders). bbox format: [x, y, w, h], COCO convention. Bale annotations for these images are untouched/unaffected - these only ADD hook/spike boxes to existing images.",
+  "train": {
+    "frame_0005.jpg": [
+      {"category": "crane_hook", "bbox": [580, 225, 245, 125]},
+      {"category": "crane_spike", "bbox": [590, 345, 200, 65]}
+    ],
+    "frame_0010.jpg": [
+      {"category": "crane_hook", "bbox": [580, 225, 220, 125]},
+      {"category": "crane_spike", "bbox": [610, 340, 150, 55]}
+    ],
+    "frame_0015.jpg": [
+      {"category": "crane_hook", "bbox": [395, 255, 185, 110]}
+    ],
+    "frame_0020.jpg": [
+      {"category": "crane_hook", "bbox": [255, 290, 235, 105]},
+      {"category": "crane_spike", "bbox": [335, 385, 125, 45]}
+    ],
+    "frame_0025.jpg": [
+      {"category": "crane_hook", "bbox": [825, 130, 225, 130]},
+      {"category": "crane_spike", "bbox": [875, 250, 125, 60]}
+    ],
+    "frame_0024.jpg": [
+      {"category": "crane_hook", "bbox": [690, 180, 250, 130]},
+      {"category": "crane_spike", "bbox": [735, 300, 140, 50]}
+    ],
+    "frame_0026.jpg": [
+      {"category": "crane_hook", "bbox": [940, 15, 275, 175]},
+      {"category": "crane_spike", "bbox": [1085, 180, 120, 65]}
+    ]
+  },
+  "valid": {}
+}

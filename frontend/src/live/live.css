@@ -1,0 +1,207 @@
+.live-page {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: start;
+}
+
+.live-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.live-main-view {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.live-status-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(20, 23, 28, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  pointer-events: none;
+}
+
+.live-status-phase { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.live-status-count { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+.live-status-knocked { font-size: 0.75rem; color: var(--amber); margin-top: 4px; font-weight: 600; }
+.live-status-position-source { font-size: 0.7rem; margin-top: 4px; font-weight: 600; }
+.live-status-position-source--vision { color: var(--green, #51cf66); }
+.live-status-position-source--self_reported { color: var(--text-dim); }
+
+.live-feeds {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.live-feeds > div {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.feed-panel-label {
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  background: rgba(20, 23, 28, 0.7);
+  padding: 2px 6px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.live-feeds--plant > div {
+  position: relative;
+}
+
+.feed-panel-badge {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(20, 23, 28, 0.7);
+  pointer-events: none;
+}
+.feed-panel-badge--online { color: var(--green, #51cf66); }
+.feed-panel-badge--offline { color: var(--amber, #ff922b); }
+
+.feed-panel-detect-toggle {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  background: rgba(20, 23, 28, 0.7);
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+.feed-panel-detect-toggle input {
+  margin: 0;
+  cursor: pointer;
+}
+
+.feed-panel-detect-counts {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  display: flex;
+  gap: 8px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  background: rgba(20, 23, 28, 0.7);
+  padding: 2px 6px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.feed-panel-offline {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  background: repeating-linear-gradient(
+    45deg,
+    #12151a,
+    #12151a 10px,
+    #171b21 10px,
+    #171b21 20px
+  );
+}
+
+.feed-panel-caption {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 0.62rem;
+  color: var(--amber);
+  background: rgba(20, 23, 28, 0.7);
+  padding: 2px 6px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.live-log {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.live-log-empty { color: var(--text-dim); font-style: italic; }
+
+.real-pick-dry-run {
+  display: flex;
+  gap: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--panel);
+}
+
+.real-pick-dry-run-panel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.real-pick-dry-run-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.real-pick-dry-run-log {
+  margin-top: 8px;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  max-height: 140px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.live-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 16px;
+}
+
+.live-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
