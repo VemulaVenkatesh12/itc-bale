@@ -14,7 +14,7 @@ from fastapi.responses import Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
 from . import (
-    boundary_guard, camera_feed, conveyor_gate, crane_remote, horizontal_servo, scale_calibration,
+    boundary_guard, camera_feed, conveyor_gate, crane_remote, fixed_cycle, horizontal_servo, scale_calibration,
     live_controller, model_service, pick_order,
 )
 from .config import DEFAULT_THRESHOLD, UPLOAD_DIR
@@ -785,6 +785,30 @@ async def crane_remote_manual(request: Request):
         raise HTTPException(400, "ch must be 0-7.")
     ok = crane_remote.manual_channel(ch, on)
     return {"ok": ok, "ch": ch, "on": on, "remote": crane_remote.status()}
+
+
+@app.post("/api/fixed_cycle/start")
+def fixed_cycle_start():
+    """Kick off the fixed, single-target POC pick-and-drop cycle (see
+    fixed_cycle.py). Vision-gated at the pick step (top-2-layers only, see
+    check_bale_present) but otherwise a hardcoded timed sequence - NOT the
+    sim's vision-driven control loop, which needs real position feedback
+    this hardware doesn't have. Refuses to start if the crane remote is
+    unreachable or a cycle is already running."""
+    return fixed_cycle.start_cycle()
+
+
+@app.get("/api/fixed_cycle/status")
+def fixed_cycle_status():
+    """Poll this while a cycle runs - step index/label, error (e.g. vision
+    gate failed), running flag."""
+    return fixed_cycle.get_status()
+
+
+@app.post("/api/fixed_cycle/stop")
+def fixed_cycle_stop():
+    """Immediately halt the running cycle and release all relays."""
+    return fixed_cycle.stop_cycle()
 
 
 @app.post("/api/upload", response_model=UploadResponse)

@@ -1,0 +1,1 @@
+{"images": [{"id": 1, "file_name": "cam101_a_005060.jpg", "width": 2560, "height": 1440}], "annotations": [{"id": 1, "image_id": 1, "category_id": 1, "category_name": "crane_hook", "bbox": [1860, 745, 190, 115], "area": 21850, "iscrowd": 0}], "categories": [{"id": 1, "name": "crane_hook", "supercategory": "crane"}]}

@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-26",
+  "source": "Physical remote-measured full-travel durations (trusted) + tape-measured rail spans and truck bed height (user-provided).",
+  "east_west": {
+    "span_cm": 980,
+    "full_travel_duration_s": 102,
+    "speed_cm_per_s": 9.608
+  },
+  "north_south": {
+    "span_cm": 1661,
+    "full_travel_duration_s": 150,
+    "speed_cm_per_s": 11.073
+  },
+  "hoist": {
+    "full_up_height_cm": 411,
+    "full_down_height_cm": 173,
+    "travel_cm": 238,
+    "full_travel_duration_s": 86,
+    "speed_cm_per_s": 2.767,
+    "note": "Heights measured floor-to-hook-tip. DOWN (173cm) is above truck_bed_height_cm (138cm) - hook reaches down to top of stacked bales, not the bed surface, consistent with top-2-layers-only scope. Duration assumed same for up and down (symmetric motor)."
+  },
+  "truck_bed_height_cm": 138,
+  "usage": "Convert a relay pulse duration on an axis to real distance via speed_cm_per_s. E.g. a 5s EAST pulse moves the crane about 5 * 9.608 = 48cm East. NOTE: Modbus command latency (see crane_remote.py) can make short pulses (<2-3s) unreliable - these speeds are most accurate for longer, sustained moves.",
+  "still_needed": [
+    "4 sides of the area - height and width, start to end (in progress, per user)"
+  ]
+}

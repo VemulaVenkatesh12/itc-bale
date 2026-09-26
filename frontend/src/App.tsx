@@ -6,6 +6,7 @@ import ControllerPanel from "./components/ControllerPanel";
 import Timeline from "./components/Timeline";
 import ResultsTable from "./components/ResultsTable";
 import LiveControlPage from "./live/LiveControlPage";
+import LiveControlPage3D from "./live/LiveControlPage3D";
 import { uploadImage, runSimulation } from "./lib/api";
 import { usePlayback } from "./lib/usePlayback";
 import { usePhysicalRelayBridge } from "./lib/usePhysicalRelayBridge";
@@ -15,7 +16,7 @@ import {
   type OrientationConfig, type Point, type Rect, type SimulationResult, type SpeedConfig, type UploadResponse,
 } from "./lib/types";
 
-type UiMode = "2d" | "3d";
+type UiMode = "2d" | "3d" | "3d-sim";
 
 export default function App() {
   const [uiMode, setUiMode] = useState<UiMode>("2d");
@@ -100,10 +101,14 @@ export default function App() {
           <button className={uiMode === "3d" ? "active" : ""} onClick={() => setUiMode("3d")}>
             Live Plant Control (real cameras)
           </button>
+          <button className={uiMode === "3d-sim" ? "active" : ""} onClick={() => setUiMode("3d-sim")}>
+            3D Simulation (Three.js)
+          </button>
         </div>
       </header>
 
       {uiMode === "3d" && <LiveControlPage />}
+      {uiMode === "3d-sim" && <LiveControlPage3D />}
 
       {uiMode === "2d" && <div className="layout">
         <div className="main-col">

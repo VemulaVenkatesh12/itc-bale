@@ -1,0 +1,9 @@
+{
+  "note": "POC-scope fixed position, NOT a general coordinate calibration. Vision-confirmed via cam101 live frame, not precise metric measurement. Good for a SUPERVISED top-2-layer pick/drop demo only.",
+  "date": "2026-09-26",
+  "reference_frame": "FIXED_pick_drop_position.jpg",
+  "position": "Crane hover point at the truck-side/conveyor-input corner (matches reference point P3 - conveyor frame corner, truck-side end).",
+  "usage": "Pick: hoist down onto truck bed top-2-layer bale at this horizontal position. Drop: raise hoist and release onto adjacent conveyor input, same horizontal position, minimal East/West adjustment.",
+  "relay_channels": {"UP":0,"DOWN":1,"EAST":2,"WEST":3,"SOUTH":4,"NORTH":5},
+  "caveat": "Exact metric coordinates NOT available - checkerboard intrinsics calibration failed (0 detections twice), and Modbus relay latency (~up to 3s per command, per crane_remote.py) makes precise timed-jog distance calibration unreliable. This position was reached and confirmed purely by iterative jog + live camera visual check."
+}
