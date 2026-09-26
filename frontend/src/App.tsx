@@ -11,6 +11,7 @@ import { uploadImage, runSimulation } from "./lib/api";
 import { usePlayback } from "./lib/usePlayback";
 import { usePhysicalRelayBridge } from "./lib/usePhysicalRelayBridge";
 import CraneRemotePanel from "./components/CraneRemotePanel";
+import FixedCyclePanel from "./components/FixedCyclePanel";
 import {
   DEFAULT_ORIENTATION, DEFAULT_SPEED,
   type OrientationConfig, type Point, type Rect, type SimulationResult, type SpeedConfig, type UploadResponse,
@@ -176,6 +177,7 @@ export default function App() {
 
         <div className="side-col">
           <ControllerPanel timeline={simResult?.relay_timeline ?? []} tMs={playback.tMs} />
+          <FixedCyclePanel />
           <CraneRemotePanel />
           <ConfigPanel
             speed={speed} onSpeed={setSpeed}

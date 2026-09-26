@@ -256,6 +256,46 @@ export async function manualCraneChannel(
   }
 }
 
+export interface FixedCycleStatus {
+  running: boolean;
+  step_index: number;
+  step_label: string;
+  total_steps: number;
+  error: string | null;
+  started_at: number | null;
+  finished_at: number | null;
+}
+
+// Fixed, vision-gated (top-2-layers presence check only, not position)
+// single-target pick-and-drop cycle - see backend/app/fixed_cycle.py.
+export async function startFixedCycle(): Promise<{ ok: boolean; reason?: string }> {
+  try {
+    const r = await fetch(`${API_BASE}/api/fixed_cycle/start`, { method: "POST" });
+    return (await r.json()) as { ok: boolean; reason?: string };
+  } catch (e) {
+    console.error("[fixed-cycle/start]", e);
+    return { ok: false, reason: "network error" };
+  }
+}
+
+export async function getFixedCycleStatus(): Promise<FixedCycleStatus | null> {
+  try {
+    const r = await fetch(`${API_BASE}/api/fixed_cycle/status`);
+    if (!r.ok) return null;
+    return (await r.json()) as FixedCycleStatus;
+  } catch {
+    return null;
+  }
+}
+
+export async function stopFixedCycle(): Promise<void> {
+  try {
+    await fetch(`${API_BASE}/api/fixed_cycle/stop`, { method: "POST" });
+  } catch (e) {
+    console.error("[fixed-cycle/stop]", e);
+  }
+}
+
 // Stateless single-frame multi-class detection (bale/crane_hook/crane_spike),
 // used by the live 3D control mode's camera-feed panels. Never persisted to
 // disk server-side (unlike uploadImage) since this is called repeatedly.
